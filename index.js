@@ -23,16 +23,25 @@ module.exports = {
 
     var options = app.options.emberHighCharts || {includeHighCharts: true};
 
+    if (options.includeHighCharts && options.includeHighMaps) {
+      app.import('vendor/highcharts-release/highcharts.src.js');
+      app.import('vendor/highmaps-release/map.src.js');
+      return;
+    }
+
     if (options.includeHighCharts) {
       app.import('vendor/highcharts-release/highcharts.src.js');
+      return;
     }
 
     if (options.includeHighStock) {
       app.import('vendor/highstock-release/highstock.src.js');
+      return;
     }
 
     if (options.includeHighMaps) {
       app.import('vendor/highmaps-release/highmaps.src.js');
+      return;
     }
   }
 };

@@ -25,12 +25,14 @@ module.exports = {
 
     if (options.includeHighCharts && options.includeHighMaps) {
       app.import('vendor/highcharts-release/highcharts.src.js');
+      app.import('vendor/highcharts-release/highcharts-more.src.js');
       app.import('vendor/highmaps-release/map.src.js');
       return;
     }
 
     if (options.includeHighCharts) {
       app.import('vendor/highcharts-release/highcharts.src.js');
+      app.import('vendor/highcharts-release/highcharts-more.src.js');
       return;
     }
 
